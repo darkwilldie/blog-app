@@ -32,7 +32,7 @@ const Home = () => {
       <Row>
         {posts.map((post) => (
           <Col key={post.id} sm={12} md={6} lg={4} className="mb-3">
-            <Card>
+            <Card className="card-acrylic">
               <Card.Body>
                 <Card.Title>{post.title}</Card.Title>
                 <Card.Text>{post.content.substring(0, 100)}...</Card.Text>

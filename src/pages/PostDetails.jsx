@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button, Card, Spinner } from 'react-bootstrap';
@@ -25,7 +24,7 @@ const PostDetails = () => {
   }
 
   return (
-    <Card>
+    <Card className="card-acrylic">
       <Card.Body>
         <Card.Title>{post.title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">By {post.author}</Card.Subtitle>

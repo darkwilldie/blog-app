@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 
-const Header = () => {
+const Header = ({ theme, toggleTheme }) => {
   return (
     <header>
       <Navbar className="navbar-custom" variant="dark" expand="lg" collapseOnSelect>
@@ -20,6 +19,9 @@ const Header = () => {
               <LinkContainer to="/create">
                 <Nav.Link>Create Post</Nav.Link>
               </LinkContainer>
+              <Button onClick={toggleTheme} variant={theme === 'light' ? 'dark' : 'light'}>
+                {theme === 'light' ? 'Dark' : 'Light'} Mode
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

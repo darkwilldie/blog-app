@@ -1,13 +1,45 @@
+:root {
+  --background-gradient-light: linear-gradient(to right, #e0c3fc, #d8a2f7);
+  --background-gradient-dark: linear-gradient(to right, #2c1a3e, #1a0f24);
+  --text-color-light: #333;
+  --text-color-dark: #eee;
+  --card-background-light: rgba(255, 255, 255, 0.5);
+  --card-background-dark: rgba(0, 0, 0, 0.3);
+  --navbar-background-light: rgba(0, 0, 0, 0.2);
+  --navbar-background-dark: rgba(0, 0, 0, 0.5);
+}
 
 body {
-  background: linear-gradient(to right, #e0c3fc, #8e44ad);
-  color: #333;
+  background: var(--background-gradient-light);
+  color: var(--text-color-light);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background: var(--background-gradient-dark);
+  color: var(--text-color-dark);
 }
 
 .navbar-custom {
-  background-color: rgba(0, 0, 0, 0.2) !important;
+  background-color: var(--navbar-background-light) !important;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .navbar-custom {
+  background-color: var(--navbar-background-dark) !important;
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--card-background-light);
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .card {
+  background-color: var(--card-background-dark);
+  color: var(--text-color-dark);
+}
+
+.card-acrylic {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
