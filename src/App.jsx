@@ -7,6 +7,19 @@ import PostDetails from './pages/PostDetails';
 import CreatePost from './pages/CreatePost';
 import EditPost from './pages/EditPost';
 
+const Meteor = () => {
+  const meteors = Array.from({ length: 10 }).map((_, i) => {
+    const style = {
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 5}s`,
+      animationDuration: `${Math.random() * 5 + 5}s`,
+    };
+    return <div key={i} className="meteor" style={style}></div>;
+  });
+  return <div className="meteor-container">{meteors}</div>;
+};
+
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
@@ -25,6 +38,7 @@ const App = () => {
 
   return (
     <Router>
+      <Meteor />
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main className="py-3">
         <Container>

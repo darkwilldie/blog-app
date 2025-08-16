@@ -1,8 +1,9 @@
 :root {
-  --background-gradient-light: linear-gradient(to right, #e0c3fc, #d8a2f7);
-  --background-gradient-dark: linear-gradient(to right, #2c1a3e, #1a0f24);
+  --background-gradient-light: linear-gradient(to right, #dde8ab, #83b185);
+  --background-gradient-dark: linear-gradient(to right, #2c3e50, #1a242f);
   --text-color-light: #333;
-  --text-color-dark: #eee;
+  --text-color-dark: #ecf0f1;
+  --author-text-color-dark: #bdc3c7;
   --card-background-light: rgba(255, 255, 255, 0.5);
   --card-background-dark: rgba(0, 0, 0, 0.3);
   --navbar-background-light: rgba(0, 0, 0, 0.2);
@@ -39,7 +40,67 @@ body.dark-mode .card {
   color: var(--text-color-dark);
 }
 
+body.dark-mode .card .text-muted {
+  color: var(--author-text-color-dark) !important;
+}
+
 .card-acrylic {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-fancy {
+  background-image: linear-gradient(to right, #f2f5a2, #a2f5a2);
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-fancy:hover {
+  background-image: linear-gradient(to right, #a2f5a2, #f2f5a2);
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.meteor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.meteor {
+  position: absolute;
+  width: 4px;
+  height: 80px;
+  background-image: linear-gradient(
+    to bottom,
+    #fccc92,
+    rgba(255, 255, 255, 0.2)
+  );
+  border-radius: 50%;
+  animation: meteor-fall 5s linear infinite;
+}
+
+@keyframes meteor-fall {
+  0% {
+    transform: translate(0, 0) rotate(210deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-700px, 700px) rotate(210deg);
+    opacity: 0;
+  }
 }

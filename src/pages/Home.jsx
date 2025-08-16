@@ -37,16 +37,19 @@ const Home = () => {
                 <Card.Title>{post.title}</Card.Title>
                 <Card.Text>{post.content.substring(0, 100)}...</Card.Text>
                 <Link to={`/post/${post.id}`}>
-                  <Button variant="primary" className="me-2">
+                  <Button variant="outline-primary" className="me-2">
                     View
                   </Button>
                 </Link>
                 <Link to={`/edit/${post.id}`}>
-                  <Button variant="secondary" className="me-2">
+                  <Button variant="outline-secondary" className="me-2">
                     Edit
                   </Button>
                 </Link>
-                <Button variant="danger" onClick={() => handleDelete(post.id)}>
+                <Button
+                  variant="outline-danger"
+                  onClick={() => handleDelete(post.id)}
+                >
                   Delete
                 </Button>
               </Card.Body>
